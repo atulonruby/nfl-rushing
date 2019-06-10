@@ -50,4 +50,16 @@ We will evaluate you on your ability to solve the problem defined in the require
 If you have any questions regarding requirements, do not hesitate to email your contact at theScore for clarification.
 
 ### Installation and running this solution
-... TODO
+1. run bundle install
+2. type "localhost:3000".you will be redirected to homes/new.
+3. Upload the file and click on save changes.
+4. You will be redirected to homes/index page.
+5. Sort columns by clicking on the column name.
+6. Filter data by Player name by typing player name in search box.
+7. Download the csv by clicking "Download CSV".
+
+
+Notes:
+I have build a restful app using tableless model. This enabled the app to run validation and show error messages on screen.
+I have used tabular.js to sort, filter and download csv on the front end side.
+
