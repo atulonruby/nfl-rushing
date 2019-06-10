@@ -60,6 +60,6 @@ If you have any questions regarding requirements, do not hesitate to email your 
 
 
 Notes:
-I have build a restful app using tableless model. This enabled the app to run validation and show error messages on screen.
+I have build a restful app using tableless model called Rushing. This enabled the app to run validation and show error messages on screen.I have written Rpsec unit test to cover Rushing model.
 I have used tabular.js to sort, filter and download csv on the front end side.
 
