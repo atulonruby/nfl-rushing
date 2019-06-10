@@ -1,0 +1,35 @@
+
+<% if @items.present? %>
+  <%= label_tag "search by Player's name" %>
+  <%= text_field_tag 'query' %>
+  <div id="tabular" class="tabular-demo"></div>
+  <%= button_tag 'Download Csv', id: 'csv'%>
+<% end %>
+
+<%= link_to 'Upload a new Rushing file', new_home_path %>
+
+<script>
+    var tableData = <%= raw @items.to_json %>;
+    var keys = <%= raw @keys.to_json %>;
+    var arr = $.map(keys, function(i){ return {title: i , field: i } } );
+
+
+    var table = new Tabulator('#tabular', {
+      data:tableData,
+      layout:"fitColumns",
+      pagination:"local",
+      paginationSize:20,
+      columns: arr,
+    });
+
+    $("#query").keyup(function(e){
+      var text = $(this).val()
+      if(text.length > 0){
+        table.setFilter("Player", "like", text);
+      }   
+    });
+
+    $('#csv').click(function(){
+      table.download("csv", "data.csv", {delimiter:"."});
+    });
+</script>
